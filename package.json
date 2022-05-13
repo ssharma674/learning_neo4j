@@ -1,0 +1,25 @@
+{
+  "name": "learning_neo4j",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssharma674/learning_neo4j.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ssharma674/learning_neo4j/issues"
+  },
+  "homepage": "https://github.com/ssharma674/learning_neo4j#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "neo4j-driver": "^4.4.5",
+    "path": "^0.12.7"
+  }
+}
