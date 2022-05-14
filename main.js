@@ -24,7 +24,7 @@ app.post('/employee', (req, res) => {
     const employee = req.body;
 	neo4jClient.createEmployee(employee).then(
 	  (emp) => {
-		  res.send('successfuly added employee!' + emp);
+		  res.send('successfuly added employee!');
 		},
 	  (error) => console.log(error)
 	);
