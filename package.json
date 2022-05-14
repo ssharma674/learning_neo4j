@@ -18,6 +18,7 @@
   "homepage": "https://github.com/ssharma674/learning_neo4j#readme",
   "dependencies": {
     "body-parser": "^1.20.0",
+    "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "neo4j-driver": "^4.4.5",
     "path": "^0.12.7"

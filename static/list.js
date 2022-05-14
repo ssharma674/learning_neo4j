@@ -1,6 +1,6 @@
  
 const xhttp = new XMLHttpRequest();
-xhttp.open("GET", "http://localhost:8080/employees", false);
+xhttp.open("GET", "/employees", false);
 xhttp.send();
 
 const employees = JSON.parse(xhttp.responseText);

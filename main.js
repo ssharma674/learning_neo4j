@@ -1,12 +1,14 @@
 const express = require('express')
 const bodyParser = require('body-parser');
-const neo4j = require("neo4j-driver");
 const path = require('path');
 
+require('dotenv').config();
+
+const Neo4jClient = require('./neo4jClient');
+let neo4jClient = new Neo4jClient();
+
 const app = express();
-const port = 8080;
-
-let employees = []
+const port = process.env.PORT || 8080;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -15,17 +17,28 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use(express.static('html'));
+app.use(express.static('static'));
+
 
 app.post('/employee', (req, res) => {
     const employee = req.body;
-	employees.push(employee);
-    res.send('successfuly added employee!');
+	neo4jClient.createEmployee(employee).then(
+	  (emp) => {
+		  res.send('successfuly added employee!' + emp);
+		},
+	  (error) => console.log(error)
+	);
 });
 
 
 app.get('/employees', (req, res) => {
-    res.json(employees);
+	neo4jClient.findAllEmployees().then(
+		(emp) => {
+		  res.json(emp);
+		},
+		(error) => console.log(error)
+	);
+    
 });
 
 app.listen(port, () => console.log(`App started on port ${port}`));
