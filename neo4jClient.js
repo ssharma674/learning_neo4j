@@ -2,7 +2,7 @@
 const neo4j = require ('neo4j-driver');
 
 const connectionString = process.env.NEO4J_CONNECTION_STRING || 'bolt://localhost:7687';
-const user = process.env.USER || 'neo4j';
+const user = process.env.USERNM || 'neo4j';
 const pw = process.env.PASSWORD || 'password';
 
 const session = neo4j
