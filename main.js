@@ -13,12 +13,7 @@ const port = process.env.PORT || 8080;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-
 app.use(express.static('static'));
-
 
 app.post('/employee', (req, res) => {
     const employee = req.body;
