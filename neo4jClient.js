@@ -6,10 +6,8 @@ const user = process.env.USERNM || 'neo4j';
 const pw = process.env.PASSWORD || 'password';
 
 const session = neo4j
-					.driver(connectionString, neo4j.auth.basic(user, pw))
-					.session();
-
-
+		.driver(connectionString, neo4j.auth.basic(user, pw))
+		.session();
 
 module.exports = class Neo4jclient {
 	async  createEmployee (employee){
@@ -26,5 +24,4 @@ module.exports = class Neo4jclient {
 		}
 		return employees;
 	}
-
 }

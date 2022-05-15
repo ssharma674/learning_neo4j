@@ -18,9 +18,7 @@ app.use(express.static('static'));
 app.post('/employee', (req, res) => {
     const employee = req.body;
 	neo4jClient.createEmployee(employee).then(
-	  (emp) => {
-		  res.send('successfuly added employee!');
-		},
+	  (emp) =>  res.send('successfuly added employee!'),
 	  (error) => console.log(error)
 	);
 });
@@ -28,9 +26,7 @@ app.post('/employee', (req, res) => {
 
 app.get('/employees', (req, res) => {
 	neo4jClient.findAllEmployees().then(
-		(emp) => {
-		  res.json(emp);
-		},
+		(emp) => res.json(emp),
 		(error) => console.log(error)
 	);
     
